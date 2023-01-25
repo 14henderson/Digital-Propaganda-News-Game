@@ -104,3 +104,13 @@ function toGame(){
     document.getElementById("userMenu").style.display = "block";
     toggleChararcter();
 }
+
+function finish(){
+    for (let i = 0; i < userChoices.length-1; i++) {
+        if(userChoices[i] == answers[userCharacter][i]){
+            document.getElementById(`article-${i+1}`).style.background = "linear-gradient(15deg, rgb(52, 232, 32) 50%, rgb(45, 228, 24) 50%)";
+        }else{
+            document.getElementById(`article-${i+1}`).style.background = "linear-gradient(15deg, rgb(237, 36, 75) 50%, rgb(218, 18, 58) 50%)";
+        }
+    }
+}

@@ -65,3 +65,11 @@ characters = {
     "dannaandfox": "Danna and Fox: Co-conspiritors",
     "paula": "Paula for Political Posturing"
 }
+
+
+answers = {
+    "dennis": [0, 0, 0, 0, 0, 0, 0, 0],
+    "mike": [3, 3, 3, 3, 3, 3, 3, 3],
+    "dannaandfox": [2, 2, 2, 2, 2, 2, 2, 2],
+    "paula": [1, 1, 1, 1, 1, 1, 1, 1]
+}
