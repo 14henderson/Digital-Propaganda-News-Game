@@ -1,0 +1,180 @@
+<!doctype html>  
+<html lang="en">  
+<head>  
+<title>Propaganda Card Game</title>
+   <link rel="stylesheet" href="styles.css">  
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+   <script src="cardDefs.js" defer></script>
+   <script src="game.js" defer></script>
+</head>  
+<body> 
+    <div id="menu" onclick="toBackground()">
+        <div id="menu-content">
+            <h1>The Propaganda Card Game</h1>
+            <p><i>Click Screen to Play</i></p>
+        </div>
+    </div>
+
+
+    <div id="background">
+        <h2>The Properganda Card Game: Background Setting</h2>
+        <p><b>Setting: </b>New-Friesland is a democratic nation bordered by the Netherlands and Belgium. Jump into the North Sea and swim your heart out for a while and you’ll reach the United Kingdom. </p>
+        <p>The country has a long history of sovereignty and self-rule: many New-Frisians take pride in their resounding victory over the Dutch Republic in the Great Land Battle of 1703, which set New-Frisian independence in stone. Today, the country is a member state of the European Collective (EC), which functions just like the European Union but is different enough to avoid copyright infringement. It’s also a member of the United Nations and the World Trade Organization, and the country trades actively with its many foreign partners. </p>
+        <p>Like all European countries, New-Friesland is facing a number of hot-button issues that have to do with the economy, trade, national sovereignty, immigration and integration, the climate, and so on. New-Friesland’s media is free, fair and pluralistic, and people from all ideological backgrounds are free to raise their voice. This makes public debate about these issues vibrant, heated, and sometimes controversial.</p>
+        <p><b>Your role:</b> As a New-Frisian citizen, you are outraged by the issues that are plaguing your country today, and fed up with the enormous amounts of misinformation about the topics you care about. You’re participating in this debate by writing an article. Your goal is to use and misuse any information you have available to convince the public of your point of view. Facts are sacred, of course, but if the other side is willing to lie to prove a point, why can’t you? </p>
+        <p>What point of view you’re trying to get across depends on what character you’re playing as: Dennis in Denial, Paula for Political Posturing, Mike the Money Changer, Dana and Fox the Co-Conspirators, or Leon the Professional. Each has a different background and different motivations and methods for influencing public opinion. Have a look at your Character Card to see who you’ll be representing. If you could now read your character card. </p>
+        <p>How to play: You’ll be creating an article about a topic from the point of view of your Character. To be as convincing as possible, you’ll have to make use of different misinformative and propagandistic techniques. You’re given a Character Card, a Source Card, and a set of paragraph templates. </p>
+        <p>Your Character Card shows your character’s background, viewpoints and goals, and the techniques they use to achieve them. The Source Card shows the topic and the full range of available information on this topic. You can use this information as selectively as you wish: use anything useful, ignore anything useless, or make stuff up out of thin air. </p>
+        <p>The paragraph templates, put together in the right order, form the body of your article: title, subtitle, headers, and content. You have many choices to choose from; use them wisely. You win by creating the most convincing article for your character. Think about what you’re trying to achieve, and how each paragraph helps you do so. </p>
+    
+        <div class="button" onclick="toGame()">Go to Game</div>
+    </div>
+
+    <div id="current-article">
+        <div id="header">
+            <h2>Your Propaganda Article</h2>
+            <span>Soemthing about what you're doing here.</span>
+        </div>
+        <hr/>
+
+        <div class="article-section empty" id="article-1" onclick="openSelection('titles')">
+            <h3>1. Title</h3>
+            <span>Click to select an article image</span>
+        </div>
+        <div class="article-section empty" id="article-2" onclick="openSelection('introductions')">
+            <h3>2. Introduction</h3>
+            <span>Click to select an article image</span>
+        </div>
+        <div class="article-section empty" id="article-3" onclick="openSelection('numbers')">
+            <h3>3. The Numbers</h3>
+            <span>Click to select an article image</span>
+        </div>
+        <div class="article-section empty" id="article-4" onclick="openSelection('perspectives')">
+            <h3>4. The numbers in perspective</h3>
+            <span>Click to select an article image</span>
+        </div>
+        <div class="article-section empty" id="article-5" onclick="openSelection('causes')">
+            <h3>5. The Causes</h3>
+            <span>Click to select an article image</span>
+        </div>
+        <div class="article-section empty" id="article-6" onclick="openSelection('problems')">
+            <h3>6. Problems</h3>
+            <span>Click to select an article image</span>
+        </div>
+        <div class="article-section empty" id="article-7" onclick="openSelection('experts')">
+            <h3>7. Experts</h3>
+            <span>Click to select an article image</span>
+        </div>
+        <div class="article-section empty" id="article-8" onclick="openSelection('conclusions')">
+            <h3>8. Conclusions</h3>
+            <span>Click to select an article image</span>
+        </div>
+    </div>
+
+
+
+    <div id="tile-choice">
+        <h2 id="title-choice-title">Choose your tile for X</h2>
+        <hr>
+        <div id="choice-article-container">
+            <div class="choice-article-section" id="choice-article-1"></div>
+            <div class="choice-article-section" id="choice-article-2"></div>
+            <div class="choice-article-section" id="choice-article-3"></div>
+            <div class="choice-article-section" id="choice-article-4"></div>
+
+        </div>
+    </div>
+
+    <div id="source">
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="character" id="mike">
+        <div class="icon-container" style="transform:rotate(15deg);"><img src="characters/mike.png" class="character-icon" style="transform:rotate(-15deg);"></div>
+        <div class="character-heading-container">
+            <h3 class="character-name">Mike the Money Changer</h3>
+            <span>Mike’s goal is simple: get clicks, make money. He tells all his friends and family that he really works as a journalist. He doesn’t care much about side issues such as factual correctness; whatever generates the most traffic is worth writing about.</span>
+            <h3>He tries to accomplish this by:</h3>
+            <ul>
+                <li>Exaggerating issues to unimaginable proportions</li>
+                <li>Ignoring inconvenient facts, inflating convenient ones</li>
+                <li>Focusing on a problem’s most sensational aspects</li>
+                <li>Being deliberately vague and relying on the reader’s imagination and extreme emotions</li>
+                <li>Relying on people’s willingness to believe stories that are too good to be true</li>
+            </ul>
+            <span>Mike the Money Changer has no ideology or particular convictions. His responsibility is to his bank account, not to his readers, journalistic ethics, or overhyped niceties like ‘the truth’ or ‘informing the public’. Cha-Ching!</span>
+            <br>
+        </div>
+    </div>
+
+    <div class="character" id="dennis">
+        <div class="icon-container" style="transform:rotate(15deg);"><img src="characters/dennis.png" class="character-icon" style="transform:rotate(-15deg);"></div>
+        <div class="character-heading-container">
+            <h3 class="character-name">Dennis in Denial</h3>
+            <span>Dennis has decided that the problem should be made to look as small as possible. He doesn’t want issues to generate any more publicity than they already do.</span>
+            <h3>He tries to accomplish this by:</h3>
+            <ul>
+                <li>Deflecting attention away from the subject at hand</li>
+                <li>Whataboutism (‘yes, but what about [X]?’)</li>
+                <li>Denying that an observation should be seen as a problem</li>
+                <li>Ignoring and leaving out inconvenient facts</li>
+                <li>Focusing on a few figures that agree with his views</li>
+            </ul>
+            <span>Dennis in Denial is convinced that the mainstream media and those in power are exaggerating the problem tremendously for their own nefarious purposes. He finds it important that his readers know that sometimes, a problem isn’t really a problem but only looks like one because powerful people want it to</span>
+            <br>
+        </div>
+    </div>
+
+    <div class="character" id="dannaandfox">
+        <div class="icon-container" style="transform:rotate(15deg);"><img src="characters/danna and fox.png" class="character-icon" style="transform:rotate(-15deg);"></div>
+        <div class="character-heading-container">
+            <h3 class="character-name">Dana and Fox: Co-Conspirators!</h3>
+            <span>Dana and Fox have figured it out: the whole thing’s a scam, cooked up by crooks and perpetuated by fools. Their first goal is to make readers lose their faith in the mainstream media. No one can be trusted. The truth is out there.</span>
+            <h3>They try to accomplish this by:</h3>
+            <ul>
+                <li>Accusing traditional media of hiding the truth</li>
+                <li>Ventilating speculative opinions based on a few tentative clues</li>
+                <li>Finding unlikely connections or links between events</li>
+                <li>Appealing to readers’ fear and paranoia</li>
+                <li>Denying or obfuscating existing evidence that disputes their theories</li>
+            </ul>
+            <span>Dana and Fox see themselves as brave, lonely providers of reliable information. Everything has a deeper explanation, but most importantly: you can find out what’s really going on by looking at what people don’t say. If you disagree, you’re either misinformed, indoctrinated, or one of them.</span>
+            <br>
+        </div>
+    </div>
+
+    <div class="character" id="paula">
+        <div class="icon-container" style="transform:rotate(15deg);"><img src="characters/paula.png" class="character-icon" style="transform:rotate(-15deg);"></div>
+        <div class="character-heading-container">
+            <h3 class="character-name">Paula for Political Posturing</h3>
+            <span>Paula wants to make issues look as large and looming as possible so she can score political points. This helps her discredit her opponents and makes them look like naive fools.</span>
+            <h3>She tries to accomplish this by:</h3>
+            <ul>
+                <li>Exaggerating the problem</li>
+                <li>Making false dichotomies (‘either-or fallacies’)</li>
+                <li>Engaging in personal attacks (‘ad hominem’)</li>
+                <li>Using every situation to blame the government</li>
+                <li>Focusing intensely on the problem’s possible consequences, however unrealistic</li>
+                <li>Appealing to readers’ anger and frustration</li>
+            </ul>
+            <span>Paula for Political Posturing is convinced that those in power are incompetent and exacerbating the problem. The mainstream media are no good at pointing this out, which makes it important to at least be loud to get her point across. She believes exaggeration and appeals to fear are legitimate means to accomplish her goals.</span>
+            <br>
+        </div>
+    </div>
+
+
+    <footer id="userMenu">
+        <div id="showCharacter" onclick="toggleChararcter()"><span>Show Character</span></div>
+        <div id="showSource" onclick="toggleSource()"><span>Show Source</span></div>
+
+    </footer>
+</body>  
+</html>
