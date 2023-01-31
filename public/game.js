@@ -99,6 +99,10 @@ function toBackground(){
 }
 
 function toGame(){
+    let characters = ["dennis", "mike", "dannaandfox", "paula"]
+    userCharacter = characters[Math.floor(Math.random() * 4)];
+
+
     document.getElementById("background").style.display = "none";
     document.getElementById("current-article").style.display = "block";
     document.getElementById("userMenu").style.display = "block";
