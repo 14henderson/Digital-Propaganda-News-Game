@@ -1,4 +1,4 @@
-userChoices = [-1, -1, -1, -1, -1, -1, -1, -1, -1];
+userChoices = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
 userCharacter = "mike";
 characterShowing = false;
 sourceShowing = false;
@@ -141,6 +141,10 @@ function openImages(){
 
 function makeImageSelection(selectionIndex){
     document.getElementById("tile-choice").style.display = "none";
+    document.getElementById("choice-article-1").style.padding = "10px";
+    document.getElementById("choice-article-2").style.padding = "10px";
+    document.getElementById("choice-article-3").style.padding = "10px";
+    document.getElementById("choice-article-4").style.padding = "10px";
 
     userChoices[tileMetadata["images"][3]] = selectionIndex;
 
