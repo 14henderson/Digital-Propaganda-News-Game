@@ -114,3 +114,36 @@ function finish(){
         }
     }
 }
+
+function openImages(){
+    document.getElementById("tile-choice").style.display = "block";
+    document.getElementById("title-choice-title").innerHTML = "Selection for: "+tileMetadata["images"][0];
+
+    document.getElementById("choice-article-1").style.padding = 0;
+    document.getElementById("choice-article-2").style.padding = 0;
+    document.getElementById("choice-article-3").style.padding = 0;
+    document.getElementById("choice-article-4").style.padding = 0;
+    document.getElementById("choice-article-1").innerHTML = `<img src="${cards["images"][0]}" class="article-image"/>`;
+    document.getElementById("choice-article-2").innerHTML = `<img src="${cards["images"][1]}" class="article-image"/>`;
+    document.getElementById("choice-article-3").innerHTML = `<img src="${cards["images"][2]}" class="article-image"/>`;
+    document.getElementById("choice-article-4").innerHTML = `<img src="${cards["images"][3]}" class="article-image"/>`;
+
+    
+    document.getElementById("choice-article-1").setAttribute("onclick", `makeImageSelection(0)`);
+    document.getElementById("choice-article-2").setAttribute("onclick", `makeImageSelection(1)`);
+    document.getElementById("choice-article-3").setAttribute("onclick", `makeImageSelection(2)`);
+    document.getElementById("choice-article-4").setAttribute("onclick", `makeImageSelection(3)`);
+}
+
+function makeImageSelection(selectionIndex){
+    document.getElementById("tile-choice").style.display = "none";
+
+    userChoices[tileMetadata["images"][3]] = selectionIndex;
+
+    tileID = tileMetadata["images"][2];
+    document.getElementById(tileID).classList.remove("empty");
+    document.getElementById(tileID).classList.add("full");
+    
+    document.getElementById(tileID).innerHTML = `<img src="${cards["images"][selectionIndex]}" class="article-image"/>`;
+   
+}
