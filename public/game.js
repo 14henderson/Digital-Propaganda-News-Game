@@ -1,7 +1,8 @@
-userChoices = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
-userCharacter = "mike";
-characterShowing = false;
-sourceShowing = false;
+var userChoices = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
+var userCharacter = "mike";
+var characterShowing = false;
+var sourceShowing = false;
+var username = null;
 
 function openSelection(category){
     fillArticleChoices();
@@ -98,36 +99,64 @@ function toBackground(){
     document.getElementById("background").style.display = "block";
 }
 
+function toUsername(){
+    document.getElementById("background").style.display = "none";
+    document.getElementById("username-screen").style.display = "block";
+}
+
 function toGame(){
+    document.getElementById("username-screen").style.display = "none";
+    username = document.getElementById("usernameInput").value;
     let characters = ["dennis", "mike", "dannaandfox", "paula"]
     userCharacter = characters[Math.floor(Math.random() * 4)];
 
-
-    document.getElementById("background").style.display = "none";
     document.getElementById("current-article").style.display = "block";
     document.getElementById("userMenu").style.display = "block";
     toggleChararcter();
 }
 
+
+
+
 function finish(){
+    let score=0
     for (let i = 0; i < userChoices.length-1; i++) {
         if(userChoices[i] == answers[userCharacter][i]){
             document.getElementById(`article-${i+1}`).style.background = "linear-gradient(15deg, rgb(52, 232, 32) 50%, rgb(45, 228, 24) 50%)";
+            score += 1;
         }else{
             document.getElementById(`article-${i+1}`).style.background = "linear-gradient(15deg, rgb(237, 36, 75) 50%, rgb(218, 18, 58) 50%)";
         }
     }
+
+    document.getElementById("submit-answers").style.display = "none";
+
+    fetch('/submitscore', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+          },
+        body: JSON.stringify({
+            'username':username, 
+            'score':score
+        })
+    });       
+        
 }
+
+
+
+
 
 function openImages(){
     fillArticleChoices();
     document.getElementById("tile-choice").style.display = "block";
     document.getElementById("title-choice-title").innerHTML = "Selection for: "+tileMetadata["images"][0];
 
-    document.getElementById("choice-article-1").style.padding = 0;
-    document.getElementById("choice-article-2").style.padding = 0;
-    document.getElementById("choice-article-3").style.padding = 0;
-    document.getElementById("choice-article-4").style.padding = 0;
+    document.getElementById("choice-article-1").style.padding = "0px";
+    document.getElementById("choice-article-2").style.padding = "0px";
+    document.getElementById("choice-article-3").style.padding = "0px";
+    document.getElementById("choice-article-4").style.padding = "0px";
     document.getElementById("choice-article-1").innerHTML = `<img src="${cards["images"][0]}" class="article-image"/>`;
     document.getElementById("choice-article-2").innerHTML = `<img src="${cards["images"][1]}" class="article-image"/>`;
     document.getElementById("choice-article-3").innerHTML = `<img src="${cards["images"][2]}" class="article-image"/>`;
@@ -141,10 +170,10 @@ function openImages(){
 
 function makeImageSelection(selectionIndex){
     document.getElementById("tile-choice").style.display = "none";
-    document.getElementById("choice-article-1").style.padding = "10px";
-    document.getElementById("choice-article-2").style.padding = "10px";
-    document.getElementById("choice-article-3").style.padding = "10px";
-    document.getElementById("choice-article-4").style.padding = "10px";
+    document.getElementById("choice-article-1").style.padding = 10;
+    document.getElementById("choice-article-2").style.padding = 10;
+    document.getElementById("choice-article-3").style.padding = 10;
+    document.getElementById("choice-article-4").style.padding = 10;
 
     userChoices[tileMetadata["images"][3]] = selectionIndex;
 

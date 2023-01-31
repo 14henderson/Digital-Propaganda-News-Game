@@ -29,6 +29,16 @@
 
         <p><b>The paragraph templates, put together in the right order, form the article for your character. You have many choices to choose from; use them wisely. You win by creating the most convincing article for your character. Think about what you’re trying to achieve, and how each paragraph helps you do so. </b></p>
     
+        <div class="button" onclick="toUsername()">Next</div>
+    </div>
+
+    <div id="username-screen">
+        <h2>Player Details</h2>
+        <p>Enter a username of your choice to be added to the game leaderboard. Please keep it clean as we will be looking player's scores at the end of the session.</p>
+        <label style="display: inline-block;"><b>Username/Name:</b></label>
+        <input type="text" style="width:100%" id="usernameInput"/>
+        <br><br>
+
         <div class="button" onclick="toGame()">Go to Game</div>
     </div>
 
@@ -76,7 +86,7 @@
             <span>Click to select a conclusion</span>
         </div>
 
-        <div class="button" onclick="finish()" style="margin: 5px;">Submit Answers</div>
+        <div class="button" onclick="finish()" style="margin: 5px;" id="submit-answers">Submit Answers</div>
         <br><br><br><br><br>
     </div>
 
