@@ -38,16 +38,22 @@ conclusion2 = "The CAA report’s conclusions are pretty close to undeniable: �
 conclusion3 = "Alternative media have been hugely important in reporting about issues such as this one, which concerns all citizens of our beautiful country. The mainstream media have failed to live up to the trust we’ve put in them. We’re committed to keeping it real, and let you know what’s happening. Follow us on Twitter and Facebook, and stay safe."
 conclusion4 = "Traditional media, especially newspapers and TV channels, have been far too accommodating in their coverage. It’s impossible to get the true version of events from media outlets that are clearly collaborating with the government to put forward a protective, politically correct narrative. Citizens of New-Friesland deserve the truth. We must not let them win."
 
+picture1 = "cards/card1.PNG"
+picture2 = "cards/card2.PNG"
+picture3 = "cards/card3.PNG"
+picture4 = "cards/card4.PNG"
 
 tileMetadata = {
     "titles": ["Title", 1, "article-1", 0],
     "introductions": ["Introduction",1, "article-2", 1],
     "numbers": ["The numbers", 2, "article-3", 2],
     "perspectives": ["The numbers in perspective", 1, "article-4", 3],
-    "causes": ["Cause", 2, "article-5", 4],
-    "problems": ["Underlying problem", 1, "article-6", 5],
-    "experts": ["Expert opinion", 2, "article-7", 6],
-    "conclusions": ["Conclusion", 1, "article-8", 7]
+    "images": ["Image", 1, "article-5", 4],
+    "causes": ["Cause", 2, "article-6", 5],
+    "problems": ["Underlying problem", 1, "article-7", 6],
+    "experts": ["Expert opinion", 2, "article-8", 7],
+    "conclusions": ["Conclusion", 1, "article-9", 8]
+    
 }
 cards = {
     "titles": [title1, title2, title3, title4],
@@ -57,7 +63,8 @@ cards = {
     "causes": [cause1, cause2, cause3, cause4],
     "problems": [problem1, problem2, problem3, problem4],
     "experts": [expert1, expert2, expert3, expert4],
-    "conclusions": [conclusion1, conclusion2, conclusion3, conclusion4]
+    "conclusions": [conclusion1, conclusion2, conclusion3, conclusion4],
+    "images": [picture1, picture2, picture3, picture4]
 }
 characters = {
     "dennis": "Dennis in Denial",
@@ -68,8 +75,8 @@ characters = {
 
 
 answers = {
-    "dennis": [0, 0, 0, 0, 0, 0, 0, 0],
-    "mike": [3, 3, 3, 3, 3, 3, 3, 3],
-    "dannaandfox": [2, 2, 2, 2, 2, 2, 2, 2],
-    "paula": [1, 1, 1, 1, 1, 1, 1, 1]
+    "dennis": [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "mike": [3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "dannaandfox": [2, 2, 2, 2, 2, 2, 2, 2, 2],
+    "paula": [1, 1, 1, 1, 1, 1, 1, 1, 1]
 }
