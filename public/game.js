@@ -4,6 +4,7 @@ characterShowing = false;
 sourceShowing = false;
 
 function openSelection(category){
+    fillArticleChoices();
     document.getElementById("tile-choice").style.display = "block";
     document.getElementById("title-choice-title").innerHTML = "Selection for: "+tileMetadata[category][0];
 
@@ -44,7 +45,6 @@ function openSelection(category){
 
 function makeSelection(category, selectionIndex){
     document.getElementById("tile-choice").style.display = "none";
-
     userChoices[tileMetadata[category][3]] = selectionIndex;
 
     tileID = tileMetadata[category][2];
@@ -120,6 +120,7 @@ function finish(){
 }
 
 function openImages(){
+    fillArticleChoices();
     document.getElementById("tile-choice").style.display = "block";
     document.getElementById("title-choice-title").innerHTML = "Selection for: "+tileMetadata["images"][0];
 
@@ -131,7 +132,6 @@ function openImages(){
     document.getElementById("choice-article-2").innerHTML = `<img src="${cards["images"][1]}" class="article-image"/>`;
     document.getElementById("choice-article-3").innerHTML = `<img src="${cards["images"][2]}" class="article-image"/>`;
     document.getElementById("choice-article-4").innerHTML = `<img src="${cards["images"][3]}" class="article-image"/>`;
-
     
     document.getElementById("choice-article-1").setAttribute("onclick", `makeImageSelection(0)`);
     document.getElementById("choice-article-2").setAttribute("onclick", `makeImageSelection(1)`);
@@ -153,5 +153,21 @@ function makeImageSelection(selectionIndex){
     document.getElementById(tileID).classList.add("full");
     
     document.getElementById(tileID).innerHTML = `<img src="${cards["images"][selectionIndex]}" class="article-image"/>`;
-   
+}
+
+function fillArticleChoices(){
+    let choices = [
+        `<div class="choice-article-section" id="choice-article-1"></div>`,
+        `<div class="choice-article-section" id="choice-article-2"></div>`,
+        `<div class="choice-article-section" id="choice-article-3"></div>`,
+        `<div class="choice-article-section" id="choice-article-4"></div>`
+    ]
+    let finalText = "";
+
+    for(let i=4; i>0; i--){
+        choice = Math.floor(Math.random() * i);
+        finalText += choices[choice];
+        choices.splice(choice, 1);
+    }
+    document.getElementById("choice-article-container").innerHTML = finalText;
 }
