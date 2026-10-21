@@ -1,7 +1,7 @@
 body{
     margin: 0;
     background: linear-gradient(45deg, rgb(0, 38, 65) 50%, rgb(20, 49, 91) 50%);
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Arial', Times, serif;
 }
 
 #menu{
@@ -140,7 +140,7 @@ footer{
     position:relative;
     font-weight: 900;
     color: rgb(1, 102, 160);
-    font-size: 1.2em;
+    font-size: 1em;
 }
 #showCharacter{float: left;}
 #showSource{float: right;}
